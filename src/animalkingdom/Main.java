@@ -3,7 +3,6 @@ package animalkingdom;
 import java.util.*;
 
 public class Main {
-    // private static List<AbstractAnimal> filteredList = new ArrayList<>();
 
     private static List<AbstractAnimal> filteredAnimals = new ArrayList<>();
 
@@ -90,6 +89,12 @@ public class Main {
         filteranimals(myList, a -> a.getYear() == 1758);
         filteredAnimals.sort((a1, a2) -> a1.getName().compareToIgnoreCase(a2.getName()));
         filteredAnimals.forEach(a -> System.out.println(a.getName() + "|" + a.getYear()));
+
+        // Strecth goal
+        System.out.println("\n**List alphabetically only those animals that are MAMMALS");
+        filteranimals(myList, a -> a.reproduce() == "live births");
+        filteredAnimals.sort((a1, a2) -> a1.getName().compareToIgnoreCase(a2.getName()));
+        filteredAnimals.forEach(a -> System.out.println(a.getName() + " | Gives birth through " + a.reproduce()));
 
         // System.out.println("\n*** The List");
         // System.out.println(myList);
